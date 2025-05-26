@@ -1,4 +1,4 @@
-# Пузырьковый
+# # Пузырьковый
 import time
 import random
 def bubble(arr):
@@ -30,7 +30,7 @@ print(arr)
 print(f'Затраченное время: {elapsed:.4f}')
 
 
-# Пирамидальный
+# # Пирамидальный
 
 
 def heapify(arr, n, i):
@@ -75,8 +75,8 @@ print(arr)
 print(f'Затраченное время: {elapsed:.4f}')
 
 
-# Метод Шелла
-
+# # Метод Шелла
+#
 def shell(data):
     inc = len(data) // 2
     while inc:
@@ -100,7 +100,7 @@ print(data)
 print(f'Затраченное время: {elapsed:.4f}')
 
 #
-# #Сортировка вставками
+# # #Сортировка вставками
 
 def insertion_sort(alist):
     for i in range(1, len(alist)):
@@ -125,7 +125,7 @@ print(alist)
 print(f'Затраченное время: {elapsed:.4f}')
 #
 
-# # БЫстрая сортировка
+# # # БЫстрая сортировка
 def partition(array, low, high):
 
     # choose the rightmost element as pivot
@@ -167,40 +167,41 @@ print(data)
 print(f'Затраченное время: {elapsed:.4f}')
 
 
-# Метод слияния
+# # Метод слияния
+import random
+import time
+def merge_sort(nums):
+    if len(nums) > 1:
+        mid = len(nums)//2
+        left = nums[:mid]
+        right = nums[mid:]
+        merge_sort(left)
+        merge_sort(right)
+        i = j = k = 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
 
-# def merge_sort(nums):
-#     if len(nums) > 1:
-#         mid = len(nums)//2
-#         left = nums[:mid]
-#         right = nums[mid:]
-#         merge_sort(left)
-#         merge_sort(right)
-#         i = j = k = 0
-#         while i < len(left) and j < len(right):
-#             if left[i] <
-# right[j]:
-#                 nums[k] = left[i]
-#                 i+=1
-#             else:
-#                 nums[k] = right[j]
-#                 j+=1
-#             k+=1
-#         while i < len(left):
-#             nums[k] = left[i]
-#             i+=1
-#             k+=1
-#         while j < len(right):
-#             nums[k] = right[j]
-#             j+=1
-#             k+=1
-#
-# nums = []
-# for i in range(1,10000):
-#     nums.append(random.randint(1,10000))
-# start_time = time.time()
-# merge_sort(nums)
-# end_time = time.time()
-# elapsed = end_time - start_time
-# print(nums)
-# print(f'Затраченное время: {elapsed:.4f}')
+                nums[k] = left[i]
+                i+=1
+            else:
+                nums[k] = right[j]
+                j+=1
+            k+=1
+        while i < len(left):
+            nums[k] = left[i]
+            i+=1
+            k+=1
+        while j < len(right):
+            nums[k] = right[j]
+            j+=1
+            k+=1
+
+nums = []
+for i in range(1,10000):
+    nums.append(random.randint(1,10000))
+start_time = time.time()
+merge_sort(nums)
+end_time = time.time()
+elapsed = end_time - start_time
+print(nums)
+print(f'Затраченное время: {elapsed:.4f}')
