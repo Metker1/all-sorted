@@ -6,4 +6,4 @@ class Person:
 for i in file:
     if getattr(Person,i,False):
         print(i)
-
+#1
