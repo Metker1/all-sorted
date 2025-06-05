@@ -1,9 +1,13 @@
-file = ['name','age','hobby','lolo']
-
 class Person:
-    lolo = "films"
+    def __init__(self,name, gender, age, study, work):
+        self.name = name
+        self.gender = gender
+        self.age = age
+        self.study = study
+        self.work = work
 
-for i in file:
-    if getattr(Person,i,False):
-        print(i)
+id_1 = Person('Вася','муж.', 18, 'колледж', 'доставка')
+id_2 = Person('Ярослав','муж.', 28, 'универ', 'сварщик')
+id_3 = Person('Маша','жен.', 23, 'колледж', 'кассир')
 
+print(id_1.__dict__)
